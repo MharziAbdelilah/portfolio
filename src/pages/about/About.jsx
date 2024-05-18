@@ -5,10 +5,22 @@ import React from 'react'
 
 function About() {
 
-  AOS.init();
+  let frontEnd = [
+    {name:"HTML"} , {name:"JAVASCRIPT"} , {name:"CSS"} ,{name:"Bootstrap"} , {name:"React"} , {name:"Angular"}
+  ];
+
+  let backEnd = [
+    {name:"PHP"} , {name:"ExpressJS"}
+  ];
+
+  let dataBase = [
+    {name:"SQL"} , {name:"MONGODB"}
+  ];
+
+  AOS.init(); // andha 3ala9a b animation wkhssni ndkhol site smyto https://michalsnik.github.io/aos/
 
   return (
-    <section className="section" id="about" data-aos="fade-up">
+    <section className="section" id="about" data-aos="fade-up">   
   <div className="top-header">
     <h1>About Me</h1>
   </div>
@@ -35,13 +47,14 @@ function About() {
           <h3>Frontend</h3>
         </div>
         <div className="skills-list">
-          <span>HTML</span>
-          <span>CSS</span>
-          <span>Bootstrap</span>
-          <span>JavaScript</span>
-          <span>Vue</span>
-          <span>React</span>
-          <span>Angular</span>
+          {/* this map about adding skills in my experience frontEnd */}
+        {
+          frontEnd.map(el=>
+              <span>{el.name}</span>
+            )
+          
+        }
+
         </div>
       </div>
       <div className="skills-box">
@@ -49,10 +62,12 @@ function About() {
           <h3>Backend</h3>
         </div>
         <div className="skills-list">
-          <span>PHP</span>
-          <span>JAVA</span>
-          <span>Python</span>
-          <span>C++</span>
+        {/* this place about adding my experience with backend */}
+        {
+          backEnd.map(elBack=>
+            <span>{elBack.name}</span>
+          )
+        }
         </div>
       </div>
       <div className="skills-box">
@@ -60,9 +75,12 @@ function About() {
           <h3>Database</h3>
         </div>
         <div className="skills-list">
-          <span>MySQL</span>
-          <span>PostgreSQL</span>
-          <span>MongoDB</span>
+  {/* this place about adding my experience with Database */}
+        {
+          dataBase.map(elData =>
+            <span>{elData.name}</span>
+          )
+        }
         </div>
       </div>
     </div>
